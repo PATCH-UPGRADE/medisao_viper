@@ -6,3 +6,7 @@ settings seams a host project provides, and how to run the test suite.
 
 Extracted from [medcrypt.ai](https://github.com/MedCrypt/medcrypt.ai)'s
 `medisao` app so it can be independently owned and maintained.
+
+## License
+
+[MIT](LICENSE).
