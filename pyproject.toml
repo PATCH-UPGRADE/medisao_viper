@@ -1,0 +1,40 @@
+[project]
+name = "medisao-viper"
+version = "0.1.0"
+description = "ARPA-H / VIPER channel API as a standalone, installable Django app."
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "django~=5.1.1",
+    "djangorestframework==3.15.2",
+    "drf-spectacular~=0.27.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-django>=4.8",
+    "ruff>=0.6",
+]
+
+[tool.setuptools.packages.find]
+include = ["viper_channel*"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+exclude = ["*/migrations/*", ".venv"]
+
+[tool.ruff.lint]
+select = [
+    "F821", # Undefined name (missing imports, typos)
+    "F401", # Unused imports (often indicates merge issues)
+    "F841", # Unused variables
+    "I",    # isort (import sorting)
+    "B",    # flake8-bugbear (catches common bugs)
+    "UP",   # pyupgrade (modern Python syntax)
+]
